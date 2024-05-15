@@ -1,38 +1,55 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #282c34;
+  min-height: 100vh;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  color: white;
+  background-color: #007BFF;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+}
+
+.todo-item span {
+  text-decoration: line-through;
+}
+
+.todo-item button {
+  margin-left: 10px;
 }

@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import TodoList from './TodoList';
 
-function App() {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
+
+function App() 
+{ 
+  const classes = useStyles();
+  const [inputValue, setInputValue] = useState('');
+  const [items, setItems] = useState([]);
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleButtonClick = () => {
+    setItems([...items, inputValue]);
+    setInputValue('');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <TodoList />
       </header>
     </div>
   );
 }
+
+
 
 export default App;

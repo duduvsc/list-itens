@@ -17,6 +17,7 @@ input {
   width: 200px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 16px;
 }
 
 button {
@@ -27,6 +28,7 @@ button {
   background-color: #007BFF;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 button:hover {
@@ -38,18 +40,21 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   width: 500px;
-  padding: 10px;
+  padding: 20px;
   margin: 20px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #fff;
   color: #000;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .todo-item span {
   text-decoration: line-through;
+  font-size: 18px;
 }
 
 .todo-item button {
   margin-left: 10px;
+  font-size: 14px;
 }

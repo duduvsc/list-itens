@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './TodoList.css'; // Importe o arquivo CSS
 
 function TodoList() {
   const [items, setItems] = useState([]);
@@ -22,16 +23,16 @@ function TodoList() {
   };
 
   return (
-    <div>
-      <input value={input} onChange={e => setInput(e.target.value)} />
-      <button onClick={handleAdd}>Adicionar</button>
+    <div className="todo-list">
+      <input className="todo-input" value={input} onChange={e => setInput(e.target.value)} />
+      <button className="todo-button" onClick={handleAdd}>Adicionar</button>
       {items.map((item, index) => (
-        <div key={index}>
+        <div key={index} className="todo-item">
           <span style={{ textDecoration: item.completed ? 'line-through' : 'none' }}>{item.text}</span>
-          <button onClick={() => handleToggleComplete(index)}>
+          <button className="todo-button" onClick={() => handleToggleComplete(index)}>
             {item.completed ? 'Desmarcar' : 'Marcar como concluído'}
           </button>
-          <button onClick={() => handleDelete(index)}>Excluir</button>
+          <button className="todo-button" onClick={() => handleDelete(index)}>Excluir</button>
         </div>
       ))}
     </div>
